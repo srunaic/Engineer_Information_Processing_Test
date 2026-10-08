@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-  <title>정보처리기사(정처기) 실전 CBT 문제은행 - 필기 200문항 & 실기 60문항 풀세트</title>
+  <title>정보처리기사(정처기) 실전 CBT 문제은행 - 필기 200문항 & 실기 60문항 올인원</title>
   <style>
     :root {
       --primary: #1B365D;
       --primary-dark: #0F2038;
       --accent: #C00000;
       --practical-color: #047857;
-      --practical-light: #ECFDF5;
+      --practical-dark: #065F46;
       --bg: #F0F4F8;
       --card-bg: #FFFFFF;
       --text: #212529;
@@ -38,7 +38,7 @@
       position: relative;
       background-color: var(--bg);
       color: var(--text);
-      padding-bottom: 40px;
+      padding-bottom: 50px;
       -webkit-text-size-adjust: 100%;
     }
     p, span, div, h1, h2, h3, button, label {
@@ -50,26 +50,26 @@
     header {
       background: linear-gradient(135deg, #1B365D, #0A192F);
       color: white;
-      padding: 12px 18px;
+      padding: 14px 18px;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
       width: 100%;
       box-sizing: border-box;
     }
     .header-inner {
-      max-width: 1240px;
+      max-width: 1260px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
       width: 100%;
     }
     .logo-title h1 {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 800;
       display: flex;
       align-items: center;
@@ -79,7 +79,7 @@
     .logo-title p {
       font-size: 12px;
       opacity: 0.85;
-      margin-top: 2px;
+      margin-top: 3px;
     }
     .main-nav-tabs {
       display: flex;
@@ -93,27 +93,30 @@
       background: transparent;
       border: none;
       color: white;
-      padding: 6px 14px;
-      font-size: 12.5px;
+      padding: 7px 14px;
+      font-size: 13px;
       font-weight: 700;
       border-radius: 6px;
       cursor: pointer;
       white-space: nowrap;
       transition: all 0.2s;
     }
+    .main-tab-btn:hover {
+      background: rgba(255,255,255,0.1);
+    }
     .main-tab-btn.active {
-      background: white;
-      color: var(--primary);
+      background: white !important;
+      color: var(--primary) !important;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      font-weight: 800;
     }
     .main-tab-btn.practical-tab.active {
-      color: var(--practical-color);
-      font-weight: 800;
+      color: var(--practical-color) !important;
     }
 
     /* Sub Toolbar */
     .sub-toolbar {
-      max-width: 1240px;
+      max-width: 1260px;
       margin: 12px auto 0;
       padding: 0 16px;
       display: flex;
@@ -132,22 +135,23 @@
     .pill-btn {
       border: none;
       background: transparent;
-      padding: 5px 12px;
-      font-size: 12px;
+      padding: 6px 14px;
+      font-size: 12.5px;
       font-weight: 700;
       color: #475569;
       border-radius: 4px;
       cursor: pointer;
+      transition: all 0.15s;
     }
     .pill-btn.active {
       background: white;
       color: #0F172A;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
     }
 
     /* Main Container */
     .cbt-container {
-      max-width: 1240px;
+      max-width: 1260px;
       margin: 14px auto;
       padding: 0 16px;
       display: grid;
@@ -206,7 +210,7 @@
     .badge-subj5 { background: #FEE2E2; color: #991B1B; }
     .badge-exam { background: #F1F5F9; color: #334155; border: 1px solid #CBD5E1; }
     .badge-killer { background: #FEE2E2; color: #991B1B; border: 1px solid #F87171; }
-    .badge-practical { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+    .badge-practical { background: #ECFDF5; color: #065F46; border: 1.5px solid #A7F3D0; }
 
     .q-title {
       font-size: 17.5px;
@@ -251,16 +255,6 @@
       padding-bottom: 6px;
       font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
     }
-    .saryo-box-light {
-      background: #FAF9F6;
-      color: #1E293B;
-      border: 1.5px dashed #94A3B8;
-      border-radius: 8px;
-      padding: 14px 16px;
-      margin-bottom: 18px;
-      font-size: 14px;
-      line-height: 1.6;
-    }
 
     .kw-tag {
       display: inline-block;
@@ -273,7 +267,7 @@
       margin: 2px;
     }
 
-    /* Choices List */
+    /* Multiple Choices List (Written) */
     .choices-list {
       display: flex;
       flex-direction: column;
@@ -346,7 +340,7 @@
     }
     .practical-textarea {
       width: 100%;
-      height: 70px;
+      height: 72px;
       padding: 10px 12px;
       font-size: 14px;
       font-family: 'Consolas', monospace;
@@ -373,7 +367,9 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      transition: background 0.15s;
     }
+    .btn-reveal-ans:hover { background: #0F2038; }
     .btn-self-correct {
       background: #15803D;
       color: white;
@@ -383,7 +379,9 @@
       font-weight: 700;
       font-size: 13px;
       cursor: pointer;
+      transition: background 0.15s;
     }
+    .btn-self-correct:hover { background: #166534; }
     .btn-self-wrong {
       background: #B91C1C;
       color: white;
@@ -393,7 +391,9 @@
       font-weight: 700;
       font-size: 13px;
       cursor: pointer;
+      transition: background 0.15s;
     }
+    .btn-self-wrong:hover { background: #991B1B; }
 
     /* Explanation Box */
     .expl-box {
@@ -472,7 +472,7 @@
       border: 1.5px solid var(--border);
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       position: sticky;
-      top: 80px;
+      top: 85px;
     }
     .omr-header {
       display: flex;
@@ -490,7 +490,7 @@
       color: #3730A3;
       padding: 4px 10px;
       border-radius: 20px;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 800;
     }
     .pass-status-box {
@@ -533,31 +533,47 @@
     }
     .reset-btn:hover { background: #FECACA; }
 
+    /* Number Grid: 5 columns on ALL screens for neat rows & columns! */
     .num-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 5px;
-      max-height: 300px;
+      gap: 6px;
+      max-height: 320px;
       overflow-y: auto;
       padding-right: 4px;
+      box-sizing: border-box;
     }
     .grid-btn {
-      padding: 6px 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 36px;
+      min-height: 36px;
+      max-height: 36px;
       border: 1.5px solid #E2E8F0;
       background: #F8FAFC;
-      border-radius: 5px;
-      font-size: 11px;
+      border-radius: 6px;
+      font-size: 12px;
       font-weight: 700;
-      color: #64748B;
+      color: #475569;
       cursor: pointer;
       text-align: center;
-      min-height: 34px;
+      white-space: nowrap !important;
+      overflow: hidden;
+      padding: 0 2px;
+      box-sizing: border-box;
       transition: all 0.1s;
     }
     .grid-btn:hover { background: #EDF2F7; }
     .grid-btn.current {
-      border-color: #1B365D;
-      background: #1B365D;
+      border-color: #1B365D !important;
+      background: #1B365D !important;
+      color: white !important;
+      font-weight: 800;
+    }
+    .grid-btn.current-practical {
+      border-color: #047857 !important;
+      background: #047857 !important;
       color: white !important;
       font-weight: 800;
     }
@@ -590,7 +606,7 @@
       gap: 6px;
     }
 
-    /* Mobile Responsive */
+    /* Responsive adjustments */
     @media (max-width: 860px) {
       .cbt-container {
         grid-template-columns: 1fr;
@@ -600,8 +616,8 @@
         margin-top: 14px;
       }
       .num-grid {
-        grid-template-columns: repeat(10, 1fr);
-        max-height: 240px;
+        grid-template-columns: repeat(5, 1fr);
+        max-height: 260px;
       }
     }
 
@@ -645,21 +661,24 @@
     
     <!-- Excel Search Container -->
     <div id="excelModeContainer" style="display:none;">
-      <div style="background:white; border-radius:12px; padding:16px; border:1.5px solid var(--border); box-shadow:0 4px 12px rgba(0,0,0,0.05);">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
-          <h3 style="font-size:16px; color:#1B365D; font-weight:800;">📑 필기(200) & 실기(60) 통합 기출 족보 검색</h3>
-          <input type="text" id="excelSearch" placeholder="키워드 검색 (예: 애자일, 정규화, C언어, 포인터, JOIN)..." onkeyup="filterExcelTable()" style="padding:7px 12px; border:1.5px solid #CBD5E1; border-radius:6px; font-size:13px; width:300px; max-width:100%;">
+      <div style="background:white; border-radius:12px; padding:18px; border:1.5px solid var(--border); box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
+          <div>
+            <h3 style="font-size:16px; color:#1B365D; font-weight:800;">📑 필기(200) & 실기(60) 통합 기출 족보 검색</h3>
+            <p style="font-size:12px; color:#64748B; margin-top:2px;">표 각 행의 [풀기 ▶] 버튼을 누르면 해당 문제로 즉시 이동합니다.</p>
+          </div>
+          <input type="text" id="excelSearch" placeholder="키워드 검색 (예: C언어, 포인터, JOIN, 정규화, 애자일)..." onkeyup="filterExcelTable()" style="padding:8px 14px; border:1.5px solid #CBD5E1; border-radius:6px; font-size:13px; width:320px; max-width:100%;">
         </div>
-        <div style="max-height:420px; overflow-y:auto; overflow-x:auto; border:1px solid #E2E8F0; border-radius:8px;">
-          <table style="width:100%; border-collapse:collapse; font-size:12.5px; text-align:left;" id="excelSummaryTable">
+        <div style="max-height:460px; overflow-y:auto; overflow-x:auto; border:1px solid #E2E8F0; border-radius:8px;">
+          <table style="width:100%; min-width:680px; border-collapse:collapse; font-size:13px; text-align:left;" id="excelSummaryTable">
             <thead style="background:#1B365D; color:white; position:sticky; top:0; z-index:2;">
               <tr>
-                <th style="padding:8px 10px; width:65px; text-align:center;">구분</th>
-                <th style="padding:8px 10px; width:60px; text-align:center;">번호</th>
-                <th style="padding:8px 10px; width:130px;">과목/분야</th>
-                <th style="padding:8px 10px; width:140px;">핵심 주제</th>
-                <th style="padding:8px 10px;">핵심 키워드 ➜ 공식 정답</th>
-                <th style="padding:8px 10px; width:75px; text-align:center;">풀기</th>
+                <th style="padding:10px 12px; width:70px; text-align:center; white-space:nowrap;">구분</th>
+                <th style="padding:10px 12px; width:65px; text-align:center; white-space:nowrap;">번호</th>
+                <th style="padding:10px 12px; width:130px; white-space:nowrap;">과목/분야</th>
+                <th style="padding:10px 12px; width:160px;">핵심 단골 주제</th>
+                <th style="padding:10px 12px;">핵심 키워드 ➜ 공식 정답</th>
+                <th style="padding:10px 12px; width:75px; text-align:center; white-space:nowrap;">풀기</th>
               </tr>
             </thead>
             <tbody id="excelTableBody"></tbody>
@@ -690,8 +709,8 @@
   <div class="right-panel">
     <div class="omr-card">
       <div class="omr-header">
-        <span class="omr-title" id="omrTitle">📋 필기 OMR 답안지</span>
-        <span class="score-badge" id="omrScoreBadge">0 / 200 풀이</span>
+        <span class="omr-title" id="omrTitle">📋 필기 OMR 답안지 (200문항)</span>
+        <span class="score-badge" id="omrScoreBadge">0 / 200 풀이 (0점)</span>
       </div>
 
       <!-- Diagnostic Status Box -->
@@ -708,13 +727,13 @@
       <!-- Category Filter -->
       <select class="filter-select" id="examFilterSelect" onchange="applyFilterChange()"></select>
 
-      <!-- Number Grid -->
+      <!-- Number Grid: 5 columns with neat alignment -->
       <div class="num-grid" id="numGrid"></div>
 
       <!-- Quick Jump Input -->
       <div style="margin-top:14px; display:flex; gap:6px;">
-        <input type="number" id="jumpNum" placeholder="문제 번호 입력" min="1" max="200" style="flex:1; padding:7px 10px; border:1.5px solid #CBD5E1; border-radius:6px; font-size:12px;" onkeydown="if(event.key==='Enter') jumpToNum()">
-        <button onclick="jumpToNum()" style="background:#1B365D; color:white; border:none; padding:7px 14px; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer;">이동</button>
+        <input type="number" id="jumpNum" placeholder="문제 번호 (1~200)" min="1" max="200" style="flex:1; padding:8px 10px; border:1.5px solid #CBD5E1; border-radius:6px; font-size:12.5px;" onkeydown="if(event.key==='Enter') jumpToNum()">
+        <button onclick="jumpToNum()" style="background:#1B365D; color:white; border:none; padding:8px 14px; border-radius:6px; font-size:12.5px; font-weight:700; cursor:pointer;">이동</button>
       </div>
     </div>
   </div>
@@ -729,11 +748,11 @@ const practicalData = [{"id": 1, "exam": "2024년 1회 실기", "topic": "C언�
 let currentMainTab = 'written'; // 'written' | 'practical' | 'explain' | 'excel'
 let currentViewMode = 'single'; // 'single' | 'all'
 
-// Written exam state
+// Written state
 let writtenAnswers = {}; // { qId: { optIdx, isCorrect } }
 let writtenIdx = 0;
 
-// Practical exam state
+// Practical state
 let practicalEval = {}; // { qId: 'correct' | 'wrong' }
 let practicalDrafts = {}; // { qId: string }
 let practicalIdx = 0;
@@ -804,25 +823,32 @@ function savePracticalState() {
 
 // Reset Progress
 function resetCurrentExamProgress() {
-  if (currentMainTab === 'written') {
+  if (currentMainTab === 'written' || currentMainTab === 'explain' || currentMainTab === 'excel') {
     if (confirm("필기 200문항 풀이 진행도를 모두 초기화하고 1번 문제부터 다시 시작하시겠습니까?\n(저장된 OMR 답안 및 채점 기록이 삭제됩니다)")) {
       writtenAnswers = {};
       writtenIdx = 0;
-      localStorage.removeItem('eng_written_answers');
-      localStorage.removeItem('eng_written_idx');
-      renderCurrentQuestion();
-      if (currentViewMode === 'all') renderAllQuestions();
-      updateOMR();
+      try {
+        localStorage.removeItem('eng_written_answers');
+        localStorage.removeItem('eng_written_idx');
+      } catch(e) {}
+      if (currentMainTab !== 'written') switchMainTab('written');
+      else {
+        renderCurrentQuestion();
+        if (currentViewMode === 'all') renderAllQuestions();
+        updateOMR();
+      }
       alert("필기 풀이 기록이 초기화되었습니다. 1번 문제부터 다시 시작합니다.");
     }
   } else if (currentMainTab === 'practical') {
-    if (confirm("실기 60문항 풀이 진행도와 작성한 답안을 모두 초기화하고 1번부터 다시 시작하시겠습니까?")) {
+    if (confirm("실기 60문항 풀이 진행도와 작성한 답안을 모두 초기화하고 1번부터 다시 시작하시겠습니까?\n(저장된 실기 답안 및 채점 기록이 삭제됩니다)")) {
       practicalEval = {};
       practicalDrafts = {};
       practicalIdx = 0;
-      localStorage.removeItem('eng_practical_eval');
-      localStorage.removeItem('eng_practical_drafts');
-      localStorage.removeItem('eng_practical_idx');
+      try {
+        localStorage.removeItem('eng_practical_eval');
+        localStorage.removeItem('eng_practical_drafts');
+        localStorage.removeItem('eng_practical_idx');
+      } catch(e) {}
       renderCurrentQuestion();
       if (currentViewMode === 'all') renderAllQuestions();
       updateOMR();
@@ -834,13 +860,13 @@ function resetCurrentExamProgress() {
 // Main Tab Switch
 function switchMainTab(tab) {
   currentMainTab = tab;
-  localStorage.setItem('eng_cbt_main_tab', tab);
+  try {
+    localStorage.setItem('eng_cbt_main_tab', tab);
+  } catch(e) {}
 
   document.querySelectorAll('.main-tab-btn').forEach(b => b.classList.remove('active'));
-  if (tab === 'written') document.getElementById('tabWritten').classList.add('active');
-  if (tab === 'practical') document.getElementById('tabPractical').classList.add('active');
-  if (tab === 'explain') document.getElementById('tabExplain').classList.add('active');
-  if (tab === 'excel') document.getElementById('tabExcel').classList.add('active');
+  const btnTarget = document.getElementById(tab === 'written' ? 'tabWritten' : tab === 'practical' ? 'tabPractical' : tab === 'explain' ? 'tabExplain' : 'tabExcel');
+  if (btnTarget) btnTarget.classList.add('active');
 
   const subToolbar = document.getElementById('subToolbar');
   const singleBox = document.getElementById('singleModeContainer');
@@ -849,34 +875,50 @@ function switchMainTab(tab) {
   const excelBox = document.getElementById('excelModeContainer');
 
   if (tab === 'written' || tab === 'practical') {
-    subToolbar.style.display = 'flex';
+    if (subToolbar) subToolbar.style.display = 'flex';
     if (currentViewMode === 'single') {
-      singleBox.style.display = 'block';
-      allBox.style.display = 'none';
+      if (singleBox) singleBox.style.display = 'block';
+      if (allBox) allBox.style.display = 'none';
     } else {
-      singleBox.style.display = 'none';
-      allBox.style.display = 'block';
+      if (singleBox) singleBox.style.display = 'none';
+      if (allBox) allBox.style.display = 'block';
     }
-    explainBox.style.display = 'none';
-    excelBox.style.display = 'none';
+    if (explainBox) explainBox.style.display = 'none';
+    if (excelBox) excelBox.style.display = 'none';
+
     populateFilterDropdown();
     renderCurrentQuestion();
     if (currentViewMode === 'all') renderAllQuestions();
     updateOMR();
+
+    // Update window hash
+    if (tab === 'written' && writtenData[writtenIdx]) {
+      window.location.hash = '#q' + writtenData[writtenIdx].id;
+    } else if (tab === 'practical' && practicalData[practicalIdx]) {
+      window.location.hash = '#p' + practicalData[practicalIdx].id;
+    }
+
   } else if (tab === 'explain') {
-    subToolbar.style.display = 'none';
-    singleBox.style.display = 'none';
-    allBox.style.display = 'none';
-    explainBox.style.display = 'block';
-    excelBox.style.display = 'none';
+    if (subToolbar) subToolbar.style.display = 'none';
+    if (singleBox) singleBox.style.display = 'none';
+    if (allBox) allBox.style.display = 'none';
+    if (explainBox) explainBox.style.display = 'block';
+    if (excelBox) excelBox.style.display = 'none';
+    
+    populateFilterDropdown();
     renderHandbook();
+    updateOMR();
+
   } else if (tab === 'excel') {
-    subToolbar.style.display = 'none';
-    singleBox.style.display = 'none';
-    allBox.style.display = 'none';
-    explainBox.style.display = 'none';
-    excelBox.style.display = 'block';
+    if (subToolbar) subToolbar.style.display = 'none';
+    if (singleBox) singleBox.style.display = 'none';
+    if (allBox) allBox.style.display = 'none';
+    if (explainBox) explainBox.style.display = 'none';
+    if (excelBox) excelBox.style.display = 'block';
+
+    populateFilterDropdown();
     populateExcelTable();
+    updateOMR();
   }
 }
 
@@ -890,12 +932,12 @@ function setViewMode(mode) {
   const allBox = document.getElementById('allModeContainer');
 
   if (mode === 'single') {
-    singleBox.style.display = 'block';
-    allBox.style.display = 'none';
+    if (singleBox) singleBox.style.display = 'block';
+    if (allBox) allBox.style.display = 'none';
     renderCurrentQuestion();
   } else {
-    singleBox.style.display = 'none';
-    allBox.style.display = 'block';
+    if (singleBox) singleBox.style.display = 'none';
+    if (allBox) allBox.style.display = 'block';
     renderAllQuestions();
   }
 }
@@ -903,22 +945,10 @@ function setViewMode(mode) {
 // Populate Category Filter Dropdown
 function populateFilterDropdown() {
   const sel = document.getElementById('examFilterSelect');
+  if (!sel) return;
   sel.innerHTML = '';
 
-  if (currentMainTab === 'written') {
-    sel.innerHTML = `
-      <option value="ALL">전체 과목 (200문항 풀세트)</option>
-      <option value="1과목">1과목: 소프트웨어 설계 (Q1~Q20, Q101~Q120)</option>
-      <option value="2과목">2과목: 소프트웨어 개발 (Q21~Q40, Q121~Q140)</option>
-      <option value="3과목">3과목: 데이터베이스 구축 (Q41~Q60, Q141~Q160)</option>
-      <option value="4과목">4과목: 프로그래밍 언어 활용 (Q61~Q80, Q161~Q180)</option>
-      <option value="5과목">5과목: 정보시스템 구축관리 (Q81~Q100, Q181~Q200)</option>
-      <option value="KILLER">🔥 킬러 / 핵심 코드·계산 문제</option>
-    `;
-    document.getElementById('omrTitle').innerText = '📋 필기 OMR 답안지';
-    document.getElementById('jumpNum').max = 200;
-    document.getElementById('jumpNum').placeholder = '문제 번호 (1~200)';
-  } else {
+  if (currentMainTab === 'practical') {
     sel.innerHTML = `
       <option value="ALL">전체 실기 (60문항 풀세트)</option>
       <option value="C언어">1. C언어 포인터 & 코드추적 (15문항)</option>
@@ -928,9 +958,23 @@ function populateFilterDropdown() {
       <option value="소프트웨어공학">5. 소프트웨어 공학 & 아키텍처 (6문항)</option>
       <option value="네트워크/보안">6. 네트워크 / 운영체제 / 보안 (6문항)</option>
     `;
-    document.getElementById('omrTitle').innerText = '✍️ 실기 답안 평가표';
+    document.getElementById('omrTitle').innerText = '✍️ 실기 답안 평가표 (60문항)';
     document.getElementById('jumpNum').max = 60;
     document.getElementById('jumpNum').placeholder = '문제 번호 (1~60)';
+  } else {
+    // written, explain, excel defaults to written filter
+    sel.innerHTML = `
+      <option value="ALL">전체 과목 (200문항 풀세트)</option>
+      <option value="1과목">1과목: 소프트웨어 설계 (Q1~Q20, Q101~Q120)</option>
+      <option value="2과목">2과목: 소프트웨어 개발 (Q21~Q40, Q121~Q140)</option>
+      <option value="3과목">3과목: 데이터베이스 구축 (Q41~Q60, Q141~Q160)</option>
+      <option value="4과목">4과목: 프로그래밍 언어 활용 (Q61~Q80, Q161~Q180)</option>
+      <option value="5과목">5과목: 정보시스템 구축관리 (Q81~Q100, Q181~Q200)</option>
+      <option value="KILLER">🔥 킬러 / 핵심 코드·계산 문제</option>
+    `;
+    document.getElementById('omrTitle').innerText = '📋 필기 OMR 답안지 (200문항)';
+    document.getElementById('jumpNum').max = 200;
+    document.getElementById('jumpNum').placeholder = '문제 번호 (1~200)';
   }
   buildNumGrid();
 }
@@ -1041,7 +1085,7 @@ function renderCurrentQuestion() {
         
         <div class="practical-actions">
           <button class="btn-reveal-ans" onclick="togglePracticalExpl(${item.id})">
-            👁️ 정답 & 상세 코드 해설 확인
+            👁️ 모범 정답 & 상세 해설 확인
           </button>
           <button class="btn-self-correct" onclick="setPracticalEvaluation(${item.id}, 'correct')">
             ⭕ 정답 맞춤 (일치)
@@ -1119,7 +1163,16 @@ function navQuestion(delta) {
   }
 }
 
-function goToQuestion(idx) {
+function goToQuestion(idx, forcedTab) {
+  if (forcedTab) {
+    if (currentMainTab !== forcedTab) {
+      switchMainTab(forcedTab);
+    }
+  } else if (currentMainTab === 'explain' || currentMainTab === 'excel') {
+    // If clicked while on explain or excel, jump into the active exam tab
+    switchMainTab('written');
+  }
+
   if (currentMainTab === 'written') {
     writtenIdx = idx;
     window.location.hash = '#q' + writtenData[writtenIdx].id;
@@ -1147,32 +1200,58 @@ function goToQuestion(idx) {
 function jumpToNum() {
   const input = document.getElementById('jumpNum');
   const val = parseInt(input.value, 10);
-  if (currentMainTab === 'written') {
-    if (val >= 1 && val <= writtenData.length) {
-      const idx = writtenData.findIndex(q => q.id === val);
-      if (idx !== -1) {
-        goToQuestion(idx);
-        input.value = '';
-      }
-    } else {
-      alert(`1부터 ${writtenData.length} 사이의 번호를 입력하세요.`);
-    }
-  } else if (currentMainTab === 'practical') {
+  if (currentMainTab === 'practical') {
     if (val >= 1 && val <= practicalData.length) {
       const idx = practicalData.findIndex(q => q.id === val);
       if (idx !== -1) {
-        goToQuestion(idx);
+        goToQuestion(idx, 'practical');
         input.value = '';
       }
     } else {
-      alert(`1부터 ${practicalData.length} 사이의 번호를 입력하세요.`);
+      alert(`실기 문제는 1부터 ${practicalData.length} 사이의 번호를 입력하세요.`);
+    }
+  } else {
+    // written
+    if (val >= 1 && val <= writtenData.length) {
+      const idx = writtenData.findIndex(q => q.id === val);
+      if (idx !== -1) {
+        goToQuestion(idx, 'written');
+        input.value = '';
+      }
+    } else {
+      alert(`필기 문제는 1부터 ${writtenData.length} 사이의 번호를 입력하세요.`);
     }
   }
 }
 
 // OMR & Stats
 function updateOMR() {
-  if (currentMainTab === 'written') {
+  if (currentMainTab === 'practical') {
+    let correctCount = 0;
+    const answeredCount = Object.keys(practicalEval).length;
+    practicalData.forEach(item => {
+      if (practicalEval[item.id] === 'correct') correctCount++;
+    });
+
+    const score = Math.round((correctCount / practicalData.length) * 100);
+    const scoreBadge = document.getElementById('omrScoreBadge');
+    if (scoreBadge) scoreBadge.innerText = `${answeredCount} / ${practicalData.length} 채점 (${score}점)`;
+
+    const passTitle = document.getElementById('passStatusTitle');
+    const passDesc = document.getElementById('passStatusDesc');
+
+    if (passTitle && passDesc) {
+      if (score >= 60) {
+        passTitle.innerHTML = `<span style="color:#15803D;">🎉 실기 합격권 달성! (${score}점)</span>`;
+        passDesc.innerText = `실기 시험 합격 기준 60점 이상을 충족했습니다!`;
+      } else {
+        passTitle.innerHTML = `<span>⏳ 실기 풀이 중: ${answeredCount}/${practicalData.length} (정답 ${correctCount}개)</span>`;
+        passDesc.innerText = `합격 기준: 100점 만점 중 60점 이상 득점`;
+      }
+    }
+
+  } else {
+    // written, explain, excel
     let correctCount = 0;
     const answeredCount = Object.keys(writtenAnswers).length;
     let subjCorrect = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
@@ -1193,58 +1272,54 @@ function updateOMR() {
     });
 
     const percent = Math.round((correctCount / writtenData.length) * 100);
-    document.getElementById('omrScoreBadge').innerText = `${answeredCount} / ${writtenData.length} 풀이 (${percent}점)`;
+    const scoreBadge = document.getElementById('omrScoreBadge');
+    if (scoreBadge) scoreBadge.innerText = `${answeredCount} / ${writtenData.length} 풀이 (${percent}점)`;
 
     const passTitle = document.getElementById('passStatusTitle');
     const passDesc = document.getElementById('passStatusDesc');
 
-    let failSubjs = [];
-    for (let s = 1; s <= 5; s++) {
-      const passRatio = subjTotal[s] > 0 ? (subjCorrect[s] / subjTotal[s]) : 0;
-      if (passRatio < 0.4) failSubjs.push(`${s}과목(${subjCorrect[s]}/${subjTotal[s]})`);
-    }
+    if (passTitle && passDesc) {
+      let failSubjs = [];
+      for (let s = 1; s <= 5; s++) {
+        const passRatio = subjTotal[s] > 0 ? (subjCorrect[s] / subjTotal[s]) : 0;
+        if (passRatio < 0.4) failSubjs.push(`${s}과목(${subjCorrect[s]}/${subjTotal[s]})`);
+      }
 
-    if (percent >= 60 && failSubjs.length === 0) {
-      passTitle.innerHTML = `<span style="color:#15803D;">🎉 최종 합격권! (${percent}점)</span>`;
-      passDesc.innerText = `전과목 40% 이상 통과 및 평균 60점 이상 달성!`;
-    } else if (percent >= 60 && failSubjs.length > 0) {
-      passTitle.innerHTML = `<span style="color:#C00000;">⚠️ 과락 주의! (${percent}점)</span>`;
-      passDesc.innerText = `평균은 합격이나 ${failSubjs.join(', ')} 과락 발생 (40% 미만)`;
-    } else {
-      passTitle.innerHTML = `<span>⏳ 풀이 중: ${answeredCount}/${writtenData.length} (정답 ${correctCount}개)</span>`;
-      passDesc.innerText = `합격 기준: 60점 이상 & 각 과목 40% 이상 통과`;
-    }
-
-  } else if (currentMainTab === 'practical') {
-    let correctCount = 0;
-    const answeredCount = Object.keys(practicalEval).length;
-    practicalData.forEach(item => {
-      if (practicalEval[item.id] === 'correct') correctCount++;
-    });
-
-    const score = Math.round((correctCount / practicalData.length) * 100);
-    document.getElementById('omrScoreBadge').innerText = `${answeredCount} / ${practicalData.length} 채점 (${score}점)`;
-
-    const passTitle = document.getElementById('passStatusTitle');
-    const passDesc = document.getElementById('passStatusDesc');
-
-    if (score >= 60) {
-      passTitle.innerHTML = `<span style="color:#15803D;">🎉 실기 합격권 달성! (${score}점)</span>`;
-      passDesc.innerText = `실기 시험 합격 기준 60점 이상을 충족했습니다!`;
-    } else {
-      passTitle.innerHTML = `<span>⏳ 실기 풀이 중: ${answeredCount}/${practicalData.length} (정답 ${correctCount}개)</span>`;
-      passDesc.innerText = `합격 기준: 100점 만점 중 60점 이상 득점`;
+      if (percent >= 60 && failSubjs.length === 0) {
+        passTitle.innerHTML = `<span style="color:#15803D;">🎉 최종 합격권! (${percent}점)</span>`;
+        passDesc.innerText = `전과목 40% 이상 통과 및 평균 60점 이상 달성!`;
+      } else if (percent >= 60 && failSubjs.length > 0) {
+        passTitle.innerHTML = `<span style="color:#C00000;">⚠️ 과락 주의! (${percent}점)</span>`;
+        passDesc.innerText = `평균은 합격이나 ${failSubjs.join(', ')} 과락 발생 (40% 미만)`;
+      } else {
+        passTitle.innerHTML = `<span>⏳ 풀이 중: ${answeredCount}/${writtenData.length} (정답 ${correctCount}개)</span>`;
+        passDesc.innerText = `합격 기준: 60점 이상 & 각 과목 40% 이상 통과`;
+      }
     }
   }
 }
 
-// Build OMR Number Grid
+// Build OMR Number Grid: 5 columns, always clean & uniform
 function buildNumGrid() {
   const grid = document.getElementById('numGrid');
+  if (!grid) return;
   grid.innerHTML = '';
   const filterVal = document.getElementById('examFilterSelect').value;
 
-  if (currentMainTab === 'written') {
+  if (currentMainTab === 'practical') {
+    practicalData.forEach((item, idx) => {
+      if (filterVal !== 'ALL') {
+        if (!item.type.includes(filterVal)) return;
+      }
+      const btn = document.createElement('button');
+      btn.className = 'grid-btn';
+      btn.id = 'gridBtn_p_' + item.id;
+      btn.innerText = 'P' + item.id;
+      btn.onclick = () => goToQuestion(idx, 'practical');
+      grid.appendChild(btn);
+    });
+  } else {
+    // written, explain, excel
     writtenData.forEach((item, idx) => {
       if (filterVal !== 'ALL') {
         if (filterVal === 'KILLER' && !item.diff.includes('킬러') && !item.diff.includes('핵심코드')) return;
@@ -1254,19 +1329,7 @@ function buildNumGrid() {
       btn.className = 'grid-btn';
       btn.id = 'gridBtn_w_' + item.id;
       btn.innerText = 'Q' + item.id;
-      btn.onclick = () => goToQuestion(idx);
-      grid.appendChild(btn);
-    });
-  } else if (currentMainTab === 'practical') {
-    practicalData.forEach((item, idx) => {
-      if (filterVal !== 'ALL') {
-        if (!item.type.includes(filterVal)) return;
-      }
-      const btn = document.createElement('button');
-      btn.className = 'grid-btn';
-      btn.id = 'gridBtn_p_' + item.id;
-      btn.innerText = 'P' + item.id;
-      btn.onclick = () => goToQuestion(idx);
+      btn.onclick = () => goToQuestion(idx, 'written');
       grid.appendChild(btn);
     });
   }
@@ -1274,9 +1337,30 @@ function buildNumGrid() {
 }
 
 function highlightGrid() {
-  document.querySelectorAll('.grid-btn').forEach(b => b.classList.remove('current'));
+  document.querySelectorAll('.grid-btn').forEach(b => {
+    b.classList.remove('current', 'current-practical');
+  });
 
-  if (currentMainTab === 'written') {
+  if (currentMainTab === 'practical') {
+    const curItem = practicalData[practicalIdx];
+    if (curItem) {
+      const curBtn = document.getElementById('gridBtn_p_' + curItem.id);
+      if (curBtn) curBtn.classList.add('current-practical');
+    }
+    Object.keys(practicalEval).forEach(qId => {
+      const b = document.getElementById('gridBtn_p_' + qId);
+      if (b) {
+        if (practicalEval[qId] === 'correct') {
+          b.classList.remove('answered-wrong');
+          b.classList.add('answered-correct');
+        } else {
+          b.classList.remove('answered-correct');
+          b.classList.add('answered-wrong');
+        }
+      }
+    });
+  } else {
+    // written
     const curItem = writtenData[writtenIdx];
     if (curItem) {
       const curBtn = document.getElementById('gridBtn_w_' + curItem.id);
@@ -1286,24 +1370,6 @@ function highlightGrid() {
       const b = document.getElementById('gridBtn_w_' + qId);
       if (b) {
         if (writtenAnswers[qId].isCorrect) {
-          b.classList.remove('answered-wrong');
-          b.classList.add('answered-correct');
-        } else {
-          b.classList.remove('answered-correct');
-          b.classList.add('answered-wrong');
-        }
-      }
-    });
-  } else if (currentMainTab === 'practical') {
-    const curItem = practicalData[practicalIdx];
-    if (curItem) {
-      const curBtn = document.getElementById('gridBtn_p_' + curItem.id);
-      if (curBtn) curBtn.classList.add('current');
-    }
-    Object.keys(practicalEval).forEach(qId => {
-      const b = document.getElementById('gridBtn_p_' + qId);
-      if (b) {
-        if (practicalEval[qId] === 'correct') {
           b.classList.remove('answered-wrong');
           b.classList.add('answered-correct');
         } else {
@@ -1330,13 +1396,73 @@ function renderAllQuestions() {
   if (!container) return;
   container.innerHTML = '';
 
-  if (currentMainTab === 'written') {
+  if (currentMainTab === 'practical') {
+    practicalData.forEach((item, idx) => {
+      const card = document.createElement('div');
+      card.className = 'q-main-card';
+      card.id = 'card_pract_' + item.id;
+      card.style.marginBottom = '20px';
+
+      const curEval = practicalEval[item.id];
+      const draftText = practicalDrafts[item.id] || '';
+
+      const boxSection = item.box ? `
+        <div class="saryo-box">
+          <div class="saryo-header">💻 【 실기 소스코드 / SQL 스키마 / 지문 】</div>
+          ${renderBoxHtml(item.box)}
+          <div style="font-size:12.5px; color:#94A3B8; border-top:1px dashed #334155; padding-top:8px; margin-top:8px; font-family:sans-serif;">
+            🔍 <b>핵심 단서:</b> <span class="kw-tag">${escapeHtml(item.clue)}</span>
+          </div>
+        </div>
+      ` : '';
+
+      card.innerHTML = `
+        <div class="q-top-info">
+          <div class="badges">
+            <span class="badge badge-practical">${item.type}</span>
+            <span class="badge badge-exam">${item.exam}</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="font-size:14px; font-weight:800; color:#047857;">#P${item.id}</span>
+            <button onclick="practicalIdx=${idx}; setViewMode('single');" style="background:#047857; color:white; border:none; padding:5px 10px; border-radius:5px; font-size:12px; font-weight:700; cursor:pointer;">1문제 집중 풀기 ↗</button>
+          </div>
+        </div>
+        <div class="q-title">[P${item.id}] ${escapeHtml(item.question)}</div>
+        <div class="q-topic-label" style="color:#047857;">📌 핵심 주제: ${escapeHtml(item.topic)}</div>
+        ${boxSection}
+        
+        <div class="practical-input-area">
+          <div class="practical-label">
+            <span>✍️ 내 답안 작성:</span>
+          </div>
+          <textarea class="practical-textarea" placeholder="답안 입력" oninput="savePracticalDraft(${item.id}, this.value)">${escapeHtml(draftText)}</textarea>
+          <div class="practical-actions">
+            <button class="btn-reveal-ans" onclick="togglePracticalExpl('all_' + ${item.id})">👁️ 해설 보기</button>
+            <button class="btn-self-correct" onclick="setPracticalEvaluation(${item.id}, 'correct')">⭕ 정답</button>
+            <button class="btn-self-wrong" onclick="setPracticalEvaluation(${item.id}, 'wrong')">❌ 오답</button>
+          </div>
+        </div>
+
+        <div class="expl-box ${curEval ? 'show' : ''}" id="expl_pract_all_${item.id}">
+          <div class="expl-title" style="color:#047857;">💡 공식 모범 답안</div>
+          <div style="font-size:15px; font-weight:800; color:#15803D; margin-bottom:6px; background:#DCFCE7; padding:8px 12px; border-radius:6px;">
+            모범 정답: ${escapeHtml(item.standard_answer)}
+          </div>
+          <div class="expl-tip">⚡ 실전 합격 팁: ${escapeHtml(item.tip)}</div>
+          <div class="expl-desc">📝 <b>상세 원리:</b> ${escapeHtml(item.explanation)}</div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+
+  } else {
+    // written
     writtenData.forEach((item, idx) => {
       const isKiller = item.diff && (item.diff.includes('킬러') || item.diff.includes('핵심코드'));
       const card = document.createElement('div');
       card.className = 'q-main-card';
       card.id = 'card_written_' + item.id;
-      card.style.marginBottom = '18px';
+      card.style.marginBottom = '20px';
 
       const userAns = writtenAnswers[item.id];
       const numLabels = ['①', '②', '③', '④'];
@@ -1375,7 +1501,7 @@ function renderAllQuestions() {
           </div>
           <div style="display:flex; align-items:center; gap:8px;">
             <span style="font-size:14px; font-weight:800; color:#1B365D;">#Q${item.id}</span>
-            <button onclick="writtenIdx=${idx}; setViewMode('single');" style="background:#1B365D; color:white; border:none; padding:4px 8px; border-radius:4px; font-size:11px; cursor:pointer;">단독 풀기 ↗</button>
+            <button onclick="writtenIdx=${idx}; setViewMode('single');" style="background:#1B365D; color:white; border:none; padding:5px 10px; border-radius:5px; font-size:12px; font-weight:700; cursor:pointer;">1문제 집중 풀기 ↗</button>
           </div>
         </div>
         <div class="q-title">[Q${item.id}] ${escapeHtml(item.title)}</div>
@@ -1386,65 +1512,6 @@ function renderAllQuestions() {
           <div class="expl-title">💡 튜터의 실전 1초 해설 & 정답 연결 공식</div>
           <div style="font-weight:700; color:#15803D; margin-bottom:4px;"><b>공식 정답:</b> ${escapeHtml(item.correct)}</div>
           <div class="expl-tip">⚡ 1초 암기 공식 팁: ${escapeHtml(item.tip)}</div>
-          <div class="expl-desc">📝 <b>상세 원리:</b> ${escapeHtml(item.explanation)}</div>
-        </div>
-      `;
-      container.appendChild(card);
-    });
-
-  } else if (currentMainTab === 'practical') {
-    practicalData.forEach((item, idx) => {
-      const card = document.createElement('div');
-      card.className = 'q-main-card';
-      card.id = 'card_pract_' + item.id;
-      card.style.marginBottom = '18px';
-
-      const curEval = practicalEval[item.id];
-      const draftText = practicalDrafts[item.id] || '';
-
-      const boxSection = item.box ? `
-        <div class="saryo-box">
-          <div class="saryo-header">💻 【 실기 소스코드 / SQL 스키마 / 지문 】</div>
-          ${renderBoxHtml(item.box)}
-          <div style="font-size:12.5px; color:#94A3B8; border-top:1px dashed #334155; padding-top:8px; margin-top:8px; font-family:sans-serif;">
-            🔍 <b>핵심 단서:</b> <span class="kw-tag">${escapeHtml(item.clue)}</span>
-          </div>
-        </div>
-      ` : '';
-
-      card.innerHTML = `
-        <div class="q-top-info">
-          <div class="badges">
-            <span class="badge badge-practical">${item.type}</span>
-            <span class="badge badge-exam">${item.exam}</span>
-          </div>
-          <div style="display:flex; align-items:center; gap:8px;">
-            <span style="font-size:14px; font-weight:800; color:#047857;">#P${item.id}</span>
-            <button onclick="practicalIdx=${idx}; setViewMode('single');" style="background:#047857; color:white; border:none; padding:4px 8px; border-radius:4px; font-size:11px; cursor:pointer;">단독 풀기 ↗</button>
-          </div>
-        </div>
-        <div class="q-title">[P${item.id}] ${escapeHtml(item.question)}</div>
-        <div class="q-topic-label" style="color:#047857;">📌 핵심 주제: ${escapeHtml(item.topic)}</div>
-        ${boxSection}
-        
-        <div class="practical-input-area">
-          <div class="practical-label">
-            <span>✍️ 내 답안 작성:</span>
-          </div>
-          <textarea class="practical-textarea" placeholder="답안 입력" oninput="savePracticalDraft(${item.id}, this.value)">${escapeHtml(draftText)}</textarea>
-          <div class="practical-actions">
-            <button class="btn-reveal-ans" onclick="togglePracticalExpl('all_' + ${item.id})">👁️ 해설 보기</button>
-            <button class="btn-self-correct" onclick="setPracticalEvaluation(${item.id}, 'correct')">⭕ 정답</button>
-            <button class="btn-self-wrong" onclick="setPracticalEvaluation(${item.id}, 'wrong')">❌ 오답</button>
-          </div>
-        </div>
-
-        <div class="expl-box ${curEval ? 'show' : ''}" id="expl_pract_all_${item.id}">
-          <div class="expl-title" style="color:#047857;">💡 공식 모범 답안</div>
-          <div style="font-size:15px; font-weight:800; color:#15803D; margin-bottom:6px; background:#DCFCE7; padding:8px 12px; border-radius:6px;">
-            모범 정답: ${escapeHtml(item.standard_answer)}
-          </div>
-          <div class="expl-tip">⚡ 실전 합격 팁: ${escapeHtml(item.tip)}</div>
           <div class="expl-desc">📝 <b>상세 원리:</b> ${escapeHtml(item.explanation)}</div>
         </div>
       `;
@@ -1562,9 +1629,9 @@ function renderHandbook() {
   ];
 
   container.innerHTML = `
-    <div style="background:#1B365D; color:white; padding:18px 20px; border-radius:12px; margin-bottom:20px;">
+    <div style="background:#1B365D; color:white; padding:20px 22px; border-radius:12px; margin-bottom:20px;">
       <h2 style="font-size:18px; margin-bottom:6px;">💡 정보처리기사 필기 5과목 & 실기 프로그래밍 핵심 족보 공식</h2>
-      <p style="font-size:13px; opacity:0.9;">필기 과락(8개 미만) 원천 차단 및 실기 코드 추적 60점 이상 합격을 위한 핵심 요약 공식입니다.</p>
+      <p style="font-size:13px; opacity:0.9;">필기 과락(8개 미만) 원천 차단 및 실기 코드 추적 60점 이상 합격을 위한 핵심 요약 공식입니다. 우측 OMR 번호를 클릭하면 해당 문제로 즉시 점프합니다.</p>
     </div>
   `;
 
@@ -1594,13 +1661,13 @@ function populateExcelTable() {
     tr.style.borderBottom = '1px solid #E2E8F0';
     tr.id = 'tr_w_' + item.id;
     tr.innerHTML = `
-      <td style="padding:7px 10px; text-align:center;"><span style="background:#E0E7FF; color:#3730A3; padding:2px 6px; border-radius:4px; font-size:11px; font-weight:700;">필기</span></td>
-      <td style="padding:7px 10px; text-align:center; font-weight:800; color:#1B365D;">Q${item.id}</td>
-      <td style="padding:7px 10px; font-size:12px;">${escapeHtml(item.subject.split(':')[0])}</td>
-      <td style="padding:7px 10px; font-weight:600;">${escapeHtml(item.topic)}</td>
-      <td style="padding:7px 10px; font-size:12px;"><span class="kw-tag">${escapeHtml(item.clue)}</span> ➜ <b>${escapeHtml(item.correct)}</b></td>
-      <td style="padding:7px 10px; text-align:center;">
-        <button onclick="switchMainTab('written'); writtenIdx=${idx}; setViewMode('single');" style="background:#1B365D; color:white; border:none; padding:4px 8px; border-radius:4px; font-size:11.5px; font-weight:700; cursor:pointer;">풀기</button>
+      <td style="padding:10px 12px; text-align:center;"><span style="background:#E0E7FF; color:#3730A3; padding:3px 8px; border-radius:4px; font-size:11px; font-weight:700;">필기</span></td>
+      <td style="padding:10px 12px; text-align:center; font-weight:800; color:#1B365D;">Q${item.id}</td>
+      <td style="padding:10px 12px; font-size:12.5px; color:#475569;">${escapeHtml(item.subject.split(':')[0])}</td>
+      <td style="padding:10px 12px; font-weight:600; color:#0F172A;">${escapeHtml(item.topic)}</td>
+      <td style="padding:10px 12px; font-size:12.5px; color:#334155;"><span class="kw-tag">${escapeHtml(item.clue)}</span> ➜ <b style="color:#15803D;">${escapeHtml(item.correct)}</b></td>
+      <td style="padding:10px 12px; text-align:center;">
+        <button onclick="goToQuestion(${idx}, 'written')" style="background:#1B365D; color:white; border:none; padding:5px 10px; border-radius:5px; font-size:12px; font-weight:700; cursor:pointer;">풀기 ▶</button>
       </td>
     `;
     tbody.appendChild(tr);
@@ -1612,13 +1679,13 @@ function populateExcelTable() {
     tr.style.borderBottom = '1px solid #E2E8F0';
     tr.id = 'tr_p_' + item.id;
     tr.innerHTML = `
-      <td style="padding:7px 10px; text-align:center;"><span style="background:#ECFDF5; color:#065F46; padding:2px 6px; border-radius:4px; font-size:11px; font-weight:700;">실기</span></td>
-      <td style="padding:7px 10px; text-align:center; font-weight:800; color:#047857;">P${item.id}</td>
-      <td style="padding:7px 10px; font-size:12px;">${escapeHtml(item.type)}</td>
-      <td style="padding:7px 10px; font-weight:600;">${escapeHtml(item.topic)}</td>
-      <td style="padding:7px 10px; font-size:12px;"><span class="kw-tag">${escapeHtml(item.clue)}</span> ➜ <b>${escapeHtml(item.standard_answer)}</b></td>
-      <td style="padding:7px 10px; text-align:center;">
-        <button onclick="switchMainTab('practical'); practicalIdx=${idx}; setViewMode('single');" style="background:#047857; color:white; border:none; padding:4px 8px; border-radius:4px; font-size:11.5px; font-weight:700; cursor:pointer;">풀기</button>
+      <td style="padding:10px 12px; text-align:center;"><span style="background:#ECFDF5; color:#065F46; padding:3px 8px; border-radius:4px; font-size:11px; font-weight:700;">실기</span></td>
+      <td style="padding:10px 12px; text-align:center; font-weight:800; color:#047857;">P${item.id}</td>
+      <td style="padding:10px 12px; font-size:12.5px; color:#065F46; font-weight:600;">${escapeHtml(item.type)}</td>
+      <td style="padding:10px 12px; font-weight:600; color:#0F172A;">${escapeHtml(item.topic)}</td>
+      <td style="padding:10px 12px; font-size:12.5px; color:#334155;"><span class="kw-tag">${escapeHtml(item.clue)}</span> ➜ <b style="color:#047857;">${escapeHtml(item.standard_answer)}</b></td>
+      <td style="padding:10px 12px; text-align:center;">
+        <button onclick="goToQuestion(${idx}, 'practical')" style="background:#047857; color:white; border:none; padding:5px 10px; border-radius:5px; font-size:12px; font-weight:700; cursor:pointer;">풀기 ▶</button>
       </td>
     `;
     tbody.appendChild(tr);
@@ -1661,6 +1728,7 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
+// URL Hash & Query Param Navigator
 function checkUrlNavigation() {
   const hash = window.location.hash.toLowerCase();
   const params = new URLSearchParams(window.location.search);
@@ -1706,10 +1774,16 @@ function checkUrlNavigation() {
 }
 
 window.addEventListener('hashchange', () => {
-  checkUrlNavigation();
+  // Only react to hashchange if it points to a different question/tab
+  const hash = window.location.hash.toLowerCase();
+  if (hash.startsWith('#p') && currentMainTab !== 'practical') {
+    checkUrlNavigation();
+  } else if (hash.startsWith('#q') && currentMainTab !== 'written') {
+    checkUrlNavigation();
+  }
 });
 
-// Init on Load
+// App Entry Point
 function init() {
   loadSessionState();
   const hasNav = checkUrlNavigation();
