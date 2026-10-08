@@ -15,6 +15,8 @@
 
 * **실전 CBT 웹사이트 바로가기**:  
   👉 **[https://srunaic.github.io/Engineer_Information_Processing_Test/](https://srunaic.github.io/Engineer_Information_Processing_Test/)**
+* **📅 실시간 시험일정 & 수험 플래너 (Q-Net 연동)**:  
+  👉 **[https://srunaic.github.io/Engineer_Information_Processing_Test/Engineer_Information_exam_schedule.html](https://srunaic.github.io/Engineer_Information_Processing_Test/Engineer_Information_exam_schedule.html)**
 
 ### 📱 모바일 간편 접속 QR 코드
 스마트폰 기본 카메라로 아래 QR 코드를 비추면 즉시 모바일 CBT 시험장으로 이동합니다.
@@ -70,6 +72,8 @@
 
 ```text
 ├── index.html                               # 필기 200문항 & 실기 60문항 통합 실전 CBT 플레이어 (GitHub Pages 호스팅)
+├── Engineer_Information_exam_schedule.html   # Q-Net 공식 연동 실시간 시험 일정 & D-Day 수험 플래너
+├── exam_schedule.html                       # 시험 일정 빠른 접속 링크 미러
 ├── cbt_player.html                          # 오프라인 및 엑셀 연동 전용 독립 실행 플레이어
 ├── questions_written_200.json               # 2024~2026 필기 200문항 공식 데이터
 ├── questions_practical_60.json              # 2024~2026 실기 60문항 공식 데이터
