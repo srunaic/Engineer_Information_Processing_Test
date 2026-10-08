@@ -1748,6 +1748,11 @@ function checkUrlNavigation() {
   const qParam = params.get('q');
   const pParam = params.get('p');
 
+  if (hash === '#practical' || hash.startsWith('#practical') || params.get('tab') === 'practical') {
+    switchMainTab('practical');
+    return true;
+  }
+
   if (pParam) {
     const pNum = parseInt(pParam, 10);
     const fIdx = practicalData.findIndex(item => item.id === pNum);
