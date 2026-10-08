@@ -1101,7 +1101,19 @@ function renderCurrentQuestion() {
         <div class="expl-title" style="color:#047857;">💡 공식 모범 답안 & 정답 채점 기준</div>
         <div style="font-size:16px; font-weight:800; color:#15803D; margin-bottom:8px; background:#DCFCE7; padding:10px 14px; border-radius:6px; border:1px solid #86EFAC;">
           모범 정답: ${escapeHtml(item.standard_answer)}
-          ${item.accepted_answers && item.accepted_answers.length > 1 ? `<div style="font-size:12px; color:#166534; font-weight:normal; margin-top:4px;">(유사 인정 답안: ${item.accepted_answers.map(escapeHtml).join(', ')})</div>` : ''}
+                  ${(() => {
+          if (!item.accepted_answers) return '';
+          let ansList = [];
+          if (Array.isArray(item.accepted_answers)) {
+            ansList = item.accepted_answers;
+          } else if (typeof item.accepted_answers === 'string') {
+            ansList = item.accepted_answers.split(/[,/]/).map(s => s.trim()).filter(Boolean);
+          }
+          if (ansList.length > 1 || (ansList.length === 1 && ansList[0] !== item.standard_answer)) {
+            return `<div style="font-size:12px; color:#166534; font-weight:normal; margin-top:4px;">(유사 인정 답안: ${ansList.map(escapeHtml).join(' / ')})</div>`;
+          }
+          return '';
+        })()}
         </div>
         <div class="expl-tip">⚡ 실전 합격 팁: ${escapeHtml(item.tip)}</div>
         <div class="expl-desc">📝 <b>상세 원리 및 코드 추적:</b> ${escapeHtml(item.explanation)}</div>
